@@ -1,0 +1,103 @@
+.homeContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+    margin-top: 10%;
+    margin-left: 20%;
+    margin-right: 20%;
+    max-width: 1200px; 
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .leftContainer {
+    max-width: 50%;
+    padding-right: 20px;
+  }
+  
+  .introBegin {
+    font-size: 18px;
+    color: #E5E9F0;
+    transition: color 0.3s ease;
+  }
+  
+  .app.light .introBegin {
+    color: #333333;
+  }
+  
+  .introName {
+    font-size: 72px;
+    font-weight: 500px;
+    color: #E5E9F0;
+    transition: color 0.3s ease;
+  }
+  
+  .app.light .introName {
+    color: #333333;
+  }
+  
+  .introSubtitle {
+    font-size: 25px;
+    color: #56B6C2;
+    transition: color 0.3s ease;
+  }
+  
+  .app.light .introSubtitle {
+    color: #0366d6;
+  }
+  
+  .introDescription {
+    font-size: 16px;
+    margin-top: 20px;
+    color: #61AFEF;
+    transition: color 0.3s ease;
+  }
+  
+  .app.light .introDescription {
+    color: #444444;
+  }
+  
+  .rightContainer {
+    max-width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px; /* Space between image and text */
+  }
+  
+  .rightContainer img {
+    width: 100%;
+    max-width: 300px; /* Ensures the image is not too large */
+    border: 5px solid #ddd; /* Adds a light border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adds depth */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .homeContainer {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 20px; /* Reduce padding for smaller screens */
+    }
+  
+    .leftContainer, .rightContainer {
+      max-width: 100%;
+      padding: 0; /* Remove extra padding for stacked layout */
+    }
+  
+    .introName {
+      font-size: 2.5rem;
+      margin: 15px 0;
+    }
+  
+    .introSubtitle {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+  
+    .rightContainer img {
+      max-width: 200px; /* Smaller image for small screens */
+    }
+  }

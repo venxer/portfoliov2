@@ -1,0 +1,143 @@
+@import "@fontsource/fira-code";
+
+.footerWrapper {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    align-items: center;
+    border-top: #ABB2BF 1px solid;
+    background-color: #282C34;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light theme styles */
+.footerWrapper.light {
+    background-color: #F0F0F0;
+    border-top: #707070 1px solid;
+}
+
+.footerWrapper > div {
+    padding: 15px 26px;
+    position: relative;
+    text-decoration: none;
+    color: #ABB2BF;
+    font-weight: 500;
+    font-family: 'Fira Code', monospace;
+    font-size: 16px;
+    letter-spacing: 1px;
+    position: relative;
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light theme text and border colors */
+.footerWrapper.light > div {
+    color: #333333;
+}
+.footerWrapper > .footerTitle {
+    border-left: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-right: 1px solid #ABB2BF;
+}
+
+.footerWrapper.light > .footerTitle{
+    border-left: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-right: 1px solid #707070;
+}
+.footerWrapper > .footerLinkIn {
+    border-left: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-right: 1px solid #ABB2BF;
+}
+
+.footerWrapper.light > .footerLinkIn{
+    border-left: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-right: 1px solid #707070;
+}
+
+.footerWrapper > .themeToggle {
+    border-right: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-left: 1px solid #ABB2BF;
+}
+
+.footerWrapper.light > .themeToggle{
+    border-right: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-left: 1px solid #707070;
+}
+
+.footerWrapper > .gitHubTitle {
+    border-left: 1px solid #ABB2BF;
+    margin-left: auto;
+    padding: 15px 26px;
+    padding-right: 30px;
+}
+
+.footerWrapper.light > .gitHubTitle {
+    border-left: 1px solid #707070;
+}
+
+.themeToggle {
+    display: flex;
+    align-items: center;
+    padding: 15px 26px;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+    border-right: none;
+}
+
+.footerWrapper > .themeToggle {
+    border-right: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-left: 1px solid #ABB2BF;
+}
+
+.footerWrapper.light > .themeToggle{
+    border-right: none;
+    margin-right: 0;
+    white-space: nowrap; /* Prevent text wrapping */
+    border-left: 1px solid #707070;
+}
+
+.themeToggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footerWrapper.light .themeToggle:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.preventSelection {
+    -webkit-user-select: none;
+    -ms-user-select: none; 
+    user-select: none;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.footerLogo {
+    margin: -4px;
+    width: 25px;
+    height: 24px;
+    vertical-align: middle;
+    transition: filter 0.3s ease;
+}
+
+/* Make icons darker in light mode */
+.footerWrapper.light .footerLogo {
+    filter: brightness(0.4) contrast(1.2);
+}

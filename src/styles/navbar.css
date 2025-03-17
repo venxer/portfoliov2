@@ -1,0 +1,118 @@
+@import "@fontsource/fira-code";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 30px;
+  margin-top: -5px;
+  margin-left: -2px;
+  margin-right: -2px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #ABB2BF;
+  transition: border-color 0.3s ease;
+}
+
+.app.light nav {
+  border-bottom: 1px solid #707070;
+}
+
+.nameContainer {
+  width: 198px;
+}
+
+nav > div {
+  padding: 15px 21.25px;
+  border-right: 1px solid #ABB2BF;
+  margin-top: 30px;
+  position: relative;
+  text-decoration: none;
+  color: #ABB2BF;
+  font-weight: 500;
+  font-family: 'Fira Code', monospace;
+  font-size: 16px;
+  letter-spacing: 1px;
+  position: relative;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.app.light nav > div {
+  border-right: 1px solid #707070;
+  color: #333333;
+}
+
+#contactMeContainer {
+  border-left: 1px solid #ABB2BF;
+  margin-left: auto;
+  padding: 15px 25px;
+  transition: border-color 0.3s ease;
+}
+
+.app.light #contactMeContainer {
+  border-left: 1px solid #707070;
+}
+
+.preventSelection {
+  -webkit-user-select: none;
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+/* On hover */
+nav > div:not(.nameContainer):hover {
+  color: #E6E6E6; 
+  font-weight: 600;
+}
+
+.app.light nav > div:not(.nameContainer):hover {
+  color: #111111;
+  font-weight: 600;
+}
+
+nav > div:not(.nameContainer)::after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -2px;
+  left: 0;
+  background-color: #E06C75; 
+  transition: width 0.3s ease;
+}
+
+nav > div:not(.nameContainer):hover::after {
+  width: 100%;
+}
+
+/* Active state */
+.active {
+  color: #E6E6E6; /* Bright text color */
+  font-weight: 600;
+  position: relative;
+  border-bottom: #E06C75 solid 3px; /* Highlighted border */
+  background-color: rgba(173, 173, 173, 0.05); /* Subtle background highlight */
+}
+
+.app.light .active {
+  color: #111111;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* NavBar specific active styles */
+nav > div.active {
+  color: #E6E6E6; /* Bright text color */
+  font-weight: 600;
+  position: relative;
+  border-bottom: #E06C75 solid 3px; /* Highlighted border */
+  background-color: rgba(173, 173, 173, 0.05); /* Subtle background highlight */
+}
+
+.app.light nav > div.active {
+  color: #111111;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Override any potential taskbar styles */
+nav > div.active:not(.taskBarList li) {
+  text-decoration: none;
+}
