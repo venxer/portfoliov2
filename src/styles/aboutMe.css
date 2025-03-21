@@ -1,0 +1,16 @@
+.aboutMeLayout {
+  display: flex;
+  height: 100vh;
+  background-color: #282c34;
+  color: #abb2bf;
+  font-family: "Fira Code", monospace;
+  opacity: 1;
+  transition: opacity 0.75s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Light theme styles for aboutMeLayout */
+.aboutMeLayout.light {
+  background-color: #F0F0F0;
+  color: #333333;
+}
+
