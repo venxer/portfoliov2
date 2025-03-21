@@ -16,9 +16,27 @@ import logs from "../assets/priceWatcher/logs.png";
 
 const Projects = ({ theme }) => {
   const [activeSection, setActiveSection] = useState("Goat Bot");
+  const [enlargedImage, setEnlargedImage] = useState(null);
+  const [isWideImage, setIsWideImage] = useState(false);
 
   const handleSectionClick = (section) => {
     setActiveSection(section);
+  };
+
+  const handleImageClick = (imgSrc) => {
+    // Create a new image object to check dimensions
+    const img = new Image();
+    img.onload = () => {
+      // Check if image width is greater than 1500px
+      setIsWideImage(img.width > 1300);
+      setEnlargedImage(imgSrc);
+    };
+    img.src = imgSrc;
+  };
+
+  const handleCloseModal = () => {
+    setEnlargedImage(null);
+    setIsWideImage(false);
   };
 
   const content = {
@@ -62,6 +80,7 @@ const Projects = ({ theme }) => {
                   src={img}
                   alt={`${activeSection} image ${index + 1}`}
                   className="contentImage"
+                  onClick={() => handleImageClick(img)}
                 />
               </div>
             ))
@@ -71,10 +90,25 @@ const Projects = ({ theme }) => {
               src={content[activeSection].images[0]}
               alt={activeSection}
               className="contentImage"
+              onClick={() => handleImageClick(content[activeSection].images[0])}
             />
           )
         ) : null}
       </div>
+
+      {/* Image Modal */}
+      {enlargedImage && (
+        <div className="imageModal" onClick={handleCloseModal}>
+          <div className="modalContent">
+            <img
+              onClick={(e) => e.stopPropagation()}
+              src={enlargedImage}
+              alt="Enlarged view"
+              className={isWideImage ? "wideImage" : "normalImage"}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };

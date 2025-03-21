@@ -103,6 +103,12 @@
     max-height: 80%;
     border-radius: 5px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .contentImage:hover {
+    transform: scale(1.05);
   }
   
   /* TaskBar components in light theme */
@@ -167,4 +173,65 @@
     border-radius: 5px;
     align-self: center; /* Center the image horizontally */
     max-height: 350px;
+  }
+  
+  /* Modal overlay */
+  .imageModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.2s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  /* Modal content */
+  .modalContent {
+    /* max-width: 90%; */
+    /* max-height: 90%; */
+    animation: zoomIn 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  @keyframes zoomIn {
+    from { transform: scale(0.5); }
+    to { transform: scale(1); }
+  }
+  
+  /* Base styles for all modal images */
+  .modalContent img {
+    user-select: none;
+    max-height: 90vh;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    object-fit: contain;
+  }
+  
+  /* Style for wide images (> 1300px) */
+  .modalContent img.wideImage {
+    max-width: 70%; /* Scaled down */
+  }
+  
+  /* Style for normal images (<= 1300px) */
+  .modalContent img.normalImage {
+    max-width: 90%; /* Larger maximum width */
+  }
+  
+  /* For smaller screens, use full width for all images */
+  @media (max-width: 768px) {
+    .modalContent img {
+      max-width: 95%;
+    }
   }
