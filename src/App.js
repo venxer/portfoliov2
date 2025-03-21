@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -9,7 +9,16 @@ import Intro from "./components/Intro";
 import Projects from "./components/Projects";
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  // Load theme from localStorage on initial render, fallback to 'light'
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme || "light";
+  });
+
+  // Save theme to localStorage whenever it changes
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
